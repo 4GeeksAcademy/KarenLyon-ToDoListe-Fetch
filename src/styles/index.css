@@ -1,12 +1,52 @@
 
-/* 
+body{
+    background-image: url("https://c8.alamy.com/comp/M4WB3G/to-do-list-seamless-pattern-background-business-flat-vector-illustration-M4WB3G.jpg") ;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 40px;
+   
+}
 
-    You can write your own styles here...
+ul li {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+    list-style: none;
+    border: 1px solid rgba(128, 128, 128, 0.543) ;
+    width: 300px;
+    border-radius: 2px;
+    text-align: left;
+    height: 50px;
+    padding: 7px;
+    margin-top: 5px;
+    margin: auto;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
+}
+input{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: none; 
+}
+
+.back {
+    width: 400px;
+    height: 900px;
+    background-color: rgba(30, 32, 34, 0.328);
+    margin: auto;
+    padding: 20px;
+}
+.trash{
+    opacity: 0;
+}
+
+.listInput:hover{
+.trash {opacity: 1;
+}.trash:hover{color: darkorange;}
+}
+
+.task{
+    margin-left: 150px;
+}
