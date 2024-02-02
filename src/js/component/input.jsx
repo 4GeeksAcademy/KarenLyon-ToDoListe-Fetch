@@ -29,11 +29,21 @@ const Input = () => {
             headers: {
                 'Content-type': 'application/json'
             }
-        }).then(response => response.json())
-            .then(
- response => setItem(response))
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Problem loading To do List');
+            }
+            return response.json();
+        })
+        .then(response => setItem(response))
+        .catch(error => {
+            console.error('User doesnt exist:', error);
+            setItem([]); // Establecer el array vacío en caso de error
+        });
+        
          
-    }
+    };
+    console.log(item)
   
     // cambia el estado
     useEffect(() => {
@@ -65,7 +75,7 @@ const Input = () => {
                 }
             }).catch((error) => { console.error("Error al agregar la tarea", error) })
 
-    }
+    };
 
 
 
