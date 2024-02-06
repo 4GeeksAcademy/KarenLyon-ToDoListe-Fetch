@@ -4,9 +4,13 @@ const Input = () => {
 
 
     const validateInput = () => {
-        if (inputValue === "") alert("The input cannot be empty");
-        else (setItem(item.concat(inputValue)));
+        if (inputValue.trim() === "") {
+            alert("The input cannot be empty");
+        } else {
+            UpdateTask(inputValue.trim());
+        }
     }
+   
     const validate = (value) => {
         if (value === ' ') { alert("The input its not correct") } else (setInputValue(value))
     }
@@ -43,7 +47,6 @@ const Input = () => {
         
          
     };
-    console.log(item)
   
     // cambia el estado
     useEffect(() => {
@@ -68,7 +71,7 @@ const Input = () => {
         fetch('https://playground.4geeks.com/apis/fake/todos/user/Karelyon', requestOptions)
             .then((response) => {
                 if (response.ok) {
-                    setInputValue("");
+                   setInputValue("");
                     return getTask()
                 } else {
                     throw new Error("Error al agregar la tarea")
@@ -116,7 +119,7 @@ const Input = () => {
                     <input type="text" value={(inputValue)} onChange={(e) => {validate(e.target.value)}}  placeholder="Write your new task"
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
-                                {validateInput()(UpdateTask(inputValue))}
+                                validateInput()
                             }
                         }}
                     />
